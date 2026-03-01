@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEX - Morales Excavación S.L. | Tarancón</title>
+    <!-- Tailwind CSS para agilidad y diseño premium -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root { --mex-amber: #f1b136; --mex-dark: #000000; }
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        .font-black-title { font-family: 'Archivo Black', sans-serif; }
+        
+        /* HEADER GLASSMORFISMO */
+        .header-glass {
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* HERO: IMPACTO TOTAL */
+        .hero-section {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.4)), 
+                        url('https://images.unsplash.com/photo-1579450302257-2a673030d941?auto=format&fit=crop&q=80&w=1600');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 8vw, 7rem);
+            line-height: 0.9;
+            text-transform: uppercase;
+            color: white;
+        }
+
+        .text-amber { color: var(--mex-amber); }
+        .text-outline {
+            -webkit-text-stroke: 1.5px var(--mex-amber);
+            color: transparent;
+        }
+
+        /* TARJETAS DE SERVICIOS */
+        .service-card {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            background: #fff;
+            border-left: 0px solid var(--mex-amber);
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-left-width: 8px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
+        }
+
+        /* BLUEPRINTS MAQUINARIA */
+        .blueprint-card {
+            background: #0d0d0d;
+            border: 1px solid #222;
+            transition: 0.3s;
+        }
+        .blueprint-card:hover {
+            border-color: var(--mex-amber);
+            transform: scale(1.03);
+        }
+        .blueprint-svg { filter: drop-shadow(0 0 5px rgba(241, 177, 54, 0.4)); }
+
+        /* SECCIÓN EQUIPO */
+        .team-bg {
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.8)), 
+                        url('https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80&w=1200');
+            background-size: cover;
+            background-position: center;
+            border-radius: 3rem;
+            min-height: 500px;
+        }
+
+        /* QR AREA */
+        .qr-gradient {
+            background: linear-gradient(135deg, #111 0%, #000 100%);
+            border: 2px solid var(--mex-amber);
+        }
+
+        /* MOBILE FIXES */
+        @media (max-width: 768px) {
+            .hero-section { height: 80vh; }
+            .team-bg { border-radius: 1.5rem; min-height: 400px; }
+            .padding-mobile { padding: 2rem 1.5rem; }
+        }
+    </style>
+</head>
+<body class="bg-white text-zinc-900 selection:bg-amber-200">
+
+    <!-- NAVEGACIÓN -->
+    <nav class="fixed w-full z-[100] transition-all duration-300 header-glass">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <div class="bg-white px-4 py-1 rounded-lg font-black text-2xl text-black font-black-title italic">
+                    <span class="text-amber-500">M</span>E<span class="text-amber-500">X</span>
+                </div>
+                <div class="hidden sm:block leading-none">
+                    <p class="text-white font-black text-xs tracking-tighter uppercase">Morales Excavación</p>
+                    <p class="text-amber-500 text-[8px] font-bold uppercase tracking-[0.4em]">Tarancón</p>
+                </div>
+            </div>
+            <div class="hidden lg:flex items-center gap-10 text-white/80 text-[10px] font-black uppercase tracking-widest">
+                <a href="#servicios" class="hover:text-amber-500 transition-colors">Servicios</a>
+                <a href="#maquinaria" class="hover:text-amber-500 transition-colors">Nuestra Flota</a>
+                <a href="#equipo" class="hover:text-amber-500 transition-colors">Equipo</a>
+                <a href="#contacto" class="bg-amber-500 text-black px-6 py-3 rounded-lg hover:bg-white transition-all">Presupuesto</a>
+            </div>
+            <button class="lg:hidden text-amber-500 text-2xl"><i class="fa-solid fa-bars-staggered"></i></button>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero-section">
+        <div class="max-w-7xl mx-auto px-6 w-full">
+            <div class="max-w-4xl space-y-6">
+                <p class="text-amber-500 font-black uppercase tracking-[0.6em] text-xs md:text-sm animate-pulse">
+                    <i class="fa-solid fa-location-dot mr-2"></i> Tarancón y Alrededores
+                </p>
+                <h1 class="hero-title font-black-title italic">
+                    TRANSFORMAMOS <br>
+                    <span class="text-outline">TERRENOS</span>,<br>
+                    CONSTRUIMOS <span class="text-amber">FUTURO.</span>
+                </h1>
+                <div class="flex flex-col sm:flex-row gap-6 pt-10">
+                    <a href="#servicios" class="bg-amber-500 text-black font-black px-12 py-6 rounded-xl uppercase text-xs tracking-widest hover:scale-110 transition-all shadow-2xl">
+                        Ver Nuestros Servicios
+                    </a>
+                    <div class="flex items-center gap-4 text-white/60 border-l-2 border-amber-500 pl-6">
+                        <span class="text-xs font-bold uppercase tracking-widest">Garantía de <br> Eficiencia Real</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section id="servicios" class="py-24 md:py-32 bg-zinc-50 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col lg:flex-row justify-between items-end mb-24 gap-12">
+                <div class="max-w-2xl">
+                    <h2 class="text-amber-500 font-black text-xs uppercase tracking-[0.6em] mb-4">Especialidades</h2>
+                    <h3 class="text-4xl md:text-7xl font-black text-black uppercase tracking-tighter leading-none italic">SERVICIOS <br> INTEGRALES</h3>
+                </div>
+                <p class="text-zinc-500 text-sm font-medium border-l-4 border-amber-500 pl-8 max-w-sm italic">
+                    Soluciones de ingeniería civil y movimientos de tierra con cobertura total en la comarca de Tarancón.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Servicio 1 -->
+                <div class="service-card p-10 rounded-[2.5rem] shadow-xl border border-zinc-100 flex flex-col h-full">
+                    <div class="text-amber-500 text-4xl mb-8"><i class="fa-solid fa-mound"></i></div>
+                    <h4 class="font-black text-xl mb-4 uppercase italic">Movimiento de Tierras</h4>
+                    <p class="text-zinc-500 text-sm leading-relaxed mb-6">Explanaciones, desmontes y terraplenado con precisión digital.</p>
+                </div>
+                <!-- Servicio 2 -->
+                <div class="service-card p-10 rounded-[2.5rem] shadow-xl border border-zinc-100 flex flex-col h-full">
+                    <div class="text-amber-500 text-4xl mb-8"><i class="fa-solid fa-burst"></i></div>
+                    <h4 class="font-black text-xl mb-4 uppercase italic">Derribos técnicos</h4>
+                    <p class="text-zinc-500 text-sm leading-relaxed mb-6">Demolición mecánica controlada y limpieza integral de tajos.</p>
+                </div>
+                <!-- Servicio 3 -->
+                <div class="service-card p-10 rounded-[2.5rem] shadow-xl border border-zinc-100 flex flex-col h-full">
+                    <div class="text-amber-500 text-4xl mb-8"><i class="fa-solid fa-trowel-bricks"></i></div>
+                    <h4 class="font-black text-xl mb-4 uppercase italic">Cimentación</h4>
+                    <p class="text-zinc-500 text-sm leading-relaxed mb-6">Zanjeos, pozos y vaciados críticos para estructuras sólidas.</p>
+                </div>
+                <!-- Servicio 4 -->
+                <div class="service-card p-10 rounded-[2.5rem] shadow-xl border border-zinc-100 flex flex-col h-full">
+                    <div class="text-amber-500 text-4xl mb-8"><i class="fa-solid fa-road"></i></div>
+                    <h4 class="font-black text-xl mb-4 uppercase italic">Viales y Vías</h4>
+                    <p class="text-zinc-500 text-sm leading-relaxed mb-6">Construcción de caminos, urbanización y pavimentos técnicos.</p>
+                </div>
+            </div>
+
+            <!-- Servicios Secundarios -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-8">
+                <div class="service-card p-10 rounded-[2.5rem] shadow-xl border border-zinc-100 flex flex-col h-full">
+                    <div class="text-amber-500 text-4xl mb-8"><i class="fa-solid fa-truck-ramp-box"></i></div>
+                    <h4 class="font-black text-xl mb-4 uppercase italic">Escombros</h4>
+                    <p class="text-zinc-500 text-sm leading-relaxed mb-6">Gestión logística de retirada y transporte a vertederos.</p>
+                </div>
+                <div class="service-card p-10 rounded-[2.5rem] shadow-xl border border-zinc-100 flex flex-col h-full">
+                    <div class="text-amber-500 text-4xl mb-8"><i class="fa-solid fa-file-contract"></i></div>
+                    <h4 class="font-black text-xl mb-4 uppercase italic">Estudio IA</h4>
+                    <p class="text-zinc-500 text-sm leading-relaxed mb-6">Optimización volumétrica y estudio técnico del proyecto.</p>
+                </div>
+                <div class="service-card p-10 rounded-[2.5rem] shadow-xl border border-zinc-100 flex flex-col h-full">
+                    <div class="text-amber-500 text-4xl mb-8"><i class="fa-solid fa-recycle"></i></div>
+                    <h4 class="font-black text-xl mb-4 uppercase italic">Residuos RCD</h4>
+                    <p class="text-zinc-500 text-sm leading-relaxed mb-6">Tratamiento de residuos bajo normativa medioambiental.</p>
+                </div>
+                <div class="service-card p-10 rounded-[2.5rem] shadow-xl border border-zinc-100 flex flex-col h-full">
+                    <div class="text-amber-500 text-4xl mb-8"><i class="fa-solid fa-file-shield"></i></div>
+                    <h4 class="font-black text-xl mb-4 uppercase italic">Permisos</h4>
+                    <p class="text-zinc-500 text-sm leading-relaxed mb-6">Gestión administrativa y tramitación de licencias técnicas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EQUIPO HUMANO -->
+    <section id="equipo" class="py-24 px-6 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="team-bg flex items-end p-8 md:p-24 shadow-2xl relative overflow-hidden group">
+                <div class="relative z-10 max-w-3xl text-white">
+                    <h2 class="text-amber-500 font-black uppercase text-xs tracking-widest mb-4 italic">El Factor Humano</h2>
+                    <h4 class="text-4xl md:text-8xl font-black uppercase tracking-tighter italic leading-none">EQUIPO FELIZ <br>Y EFICAZ</h4>
+                    <p class="mt-8 text-white/70 text-lg md:text-xl font-light italic">
+                        Contamos con operarios altamente cualificados, trabajando con la indumentaria de seguridad adecuada y un enfoque centrado en la resolución técnica diaria.
+                    </p>
+                    <div class="flex flex-wrap gap-4 mt-10">
+                        <span class="bg-amber-500 text-black px-6 py-2 rounded-full font-black text-[10px] uppercase">Seguridad 100%</span>
+                        <span class="bg-white/10 backdrop-blur-md text-white px-6 py-2 rounded-full font-black text-[10px] uppercase">Compromiso</span>
+                        <span class="bg-white/10 backdrop-blur-md text-white px-6 py-2 rounded-full font-black text-[10px] uppercase">Eficacia</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FLOTA (DIBUJOS TÉCNICOS) -->
+    <section id="maquinaria" class="py-24 md:py-32 bg-zinc-950 text-white px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-24">
+                <h2 class="text-amber-500 text-xs font-black uppercase tracking-[0.6em] mb-4">Parque Móvil</h2>
+                <h3 class="text-4xl md:text-8xl font-black tracking-tighter uppercase italic leading-none">NUESTRA FLOTA</h3>
+                <p class="text-zinc-500 mt-8 max-w-2xl mx-auto text-sm">10 unidades de ingeniería pesada listas para desplegarse en cualquier tajo.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6" id="fleet-container">
+                <!-- Inyectado por JS para dibujos técnicos precisos -->
+            </div>
+        </div>
+    </section>
+
+    <!-- QR Y CONTACTO -->
+    <section id="contacto" class="py-24 md:py-40 px-6 bg-white overflow-hidden">
+        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-20">
+            <div class="lg:w-1/2 space-y-12 text-center lg:text-left">
+                <h3 class="text-5xl md:text-9xl font-black text-black tracking-tighter uppercase italic leading-none">MEX EN SU <br> <span class="text-amber-500 underline decoration-black/10">BOLSILLO</span></h3>
+                <p class="text-zinc-400 text-lg md:text-xl font-light italic">Escanee el código QR para guardar nuestro contacto directo o descargar la web en su pantalla de inicio.</p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                    <div class="bg-zinc-900 p-8 rounded-3xl text-white flex items-center gap-6 shadow-2xl transform hover:scale-105 transition-all">
+                        <i class="fa-solid fa-phone-volume text-amber-500 text-4xl"></i>
+                        <div class="text-left">
+                            <p class="text-[9px] font-black uppercase text-zinc-500 tracking-widest italic">Contacto Urgente</p>
+                            <p class="text-xl font-black italic tracking-tighter">+34 600 000 000</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:w-1/3 text-center">
+                <div class="qr-gradient p-12 rounded-[4rem] shadow-2xl shadow-amber-500/20 inline-block transform hover:rotate-3 transition-transform">
+                    <!-- QR MEX DESIGN -->
+                    <svg width="220" height="220" viewBox="0 0 100 100">
+                        <rect x="5" y="5" width="25" height="25" fill="#f1b136" rx="2"/>
+                        <rect x="9" y="9" width="17" height="17" fill="black"/>
+                        <rect x="12" y="12" width="11" height="11" fill="#f1b136"/>
+                        
+                        <rect x="70" y="5" width="25" height="25" fill="#f1b136" rx="2"/>
+                        <rect x="74" y="9" width="17" height="17" fill="black"/>
+                        
+                        <rect x="5" y="70" width="25" height="25" fill="#f1b136" rx="2"/>
+                        <rect x="12" y="77" width="11" height="11" fill="#f1b136"/>
+                        
+                        <path d="M40 10h10v10h-10zM60 40h20v5h-20zM40 70h10v10h-10zM80 80h10v10h-10z" fill="white" opacity="0.6"/>
+                        <rect x="45" y="45" width="10" height="10" fill="#f1b136"/>
+                    </svg>
+                    <p class="text-white text-center font-black uppercase text-[10px] mt-8 tracking-[0.5em] italic">Scan MEX Tarancón</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-black py-20 px-6 text-center border-t border-white/5">
+        <div class="bg-white px-4 py-1.5 rounded inline-block font-black text-2xl text-black italic mb-10">
+            <span class="text-amber-500">M</span>E<span class="text-amber-500">X</span>
+        </div>
+        <p class="text-white/30 text-[10px] font-black uppercase tracking-[0.5em]">Morales Excavación S.L. &copy; 2026 | Tarancón - Cuenca</p>
+    </footer>
+
+    <script>
+        const fleet = [
+            { n: "CAT 320", d: "Retroexcavadora Orugas", type: "retro" },
+            { n: "JCB 3CX", d: "Mixta Retrocargadora", type: "mixta" },
+            { n: "HAMM 3412", d: "Apisonadora Rodillo", type: "apisonadora" },
+            { n: "SCANIA G450", d: "Camión Grúa / Pluma", type: "camion" },
+            { n: "VOLVO A30G", d: "Dúmper Articulado", type: "camion" },
+            { n: "CAT D6", d: "Bulldozer Nivelación", type: "retro" },
+            { n: "KUBOTA KX", d: "Miniexcavadora 5T", type: "retro" },
+            { n: "MERCEDES", d: "Bañera de 3 Ejes", type: "camion" },
+            { n: "CAT 140", d: "Motoniveladora", type: "mixta" },
+            { n: "MAN TGS", d: "Cisterna de Agua", type: "camion" }
+        ];
+
+        const drawings = {
+            retro: `<path d="M5 50h40l5-15h-35l-10 15zM45 35l10-20h20l15 15M85 30l10 25M10 50a8 8 0 100 16 8 8 0 000-16zM35 50a8 8 0 100 16 8 8 0 000-16zM45 35h25M85 30h10v10h-10z" stroke-width="1.5"/>`,
+            mixta: `<path d="M20 50h50l5-25h-45M10 25h30l5 15M70 50l15-25M5 25l15 25M25 50a8 8 0 100 16 8 8 0 000-16zM60 50a8 8 0 100 16 8 8 0 000-16z" stroke-width="1.5"/>`,
+            apisonadora: `<path d="M5 50a18 18 0 1036 0 18 18 0 00-36 0zM41 50h45l5-25h-40M80 50a8 8 0 100 16 8 8 0 000-16zM45 25h35v12h-35z" stroke-width="1.5"/>`,
+            camion: `<path d="M5 50h90v-20h-55v-12h-35v42zM15 50a8 8 0 100 16 8 8 0 000-16zM75 50a8 8 0 100 16 8 8 0 000-16zM35 25h50v8h-50z" stroke-width="1.5"/>`
+        };
+
+        const container = document.getElementById('fleet-container');
+        fleet.forEach(m => {
+            container.innerHTML += `
+                <div class="blueprint-card p-10 rounded-[3rem] text-center transition-all group cursor-pointer hover:shadow-2xl shadow-amber-500/10">
+                    <div class="h-32 flex items-center justify-center mb-8">
+                        <svg viewBox="0 0 100 75" fill="none" stroke="#f1b136" stroke-dasharray="3,2" class="blueprint-svg w-32 h-32 opacity-80 group-hover:opacity-100 transition-opacity">
+                            ${drawings[m.type] || drawings.retro}
+                        </svg>
+                    </div>
+                    <h4 class="text-white font-black text-xl italic tracking-tighter uppercase mb-2 group-hover:text-amber-500">${m.n}</h4>
+                    <p class="text-amber-500 font-black text-[9px] uppercase tracking-widest opacity-60 italic">${m.d}</p>
+                </div>
+            `;
+        });
+    </script>
+</body>
+</html>
