@@ -1,29 +1,31 @@
-<!DOCTYPE html>
+Ôªø<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MEX - Morales ExcavaciÛn S.L. | TarancÛn</title>
-    <!-- Tailwind CSS para agilidad y diseÒo premium -->
+    <title>Morales Excavaci√≥n S.L. | Taranc√≥n y Comarca</title>
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
     <style>
-        :root { --mex-amber: #f1b136; --mex-dark: #000000; }
+        :root { --mex-amber: #f1b136; --mex-black: #000000; }
         body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
         .font-black-title { font-family: 'Archivo Black', sans-serif; }
         
-        /* HEADER GLASSMORFISMO */
-        .header-glass {
-            background: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(15px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        /* Efecto de Vidrio para el Men√∫ */
+        .glass-nav {
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(241, 177, 54, 0.2);
         }
 
-        /* HERO: IMPACTO TOTAL */
+        /* Hero Section - Imagen real de maquinaria pesada */
         .hero-section {
-            height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.4)), 
+            min-height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.4)), 
                         url('https://images.unsplash.com/photo-1579450302257-2a673030d941?auto=format&fit=crop&q=80&w=1600');
             background-size: cover;
             background-position: center;
@@ -31,109 +33,113 @@
             align-items: center;
         }
 
-        .hero-title {
-            font-size: clamp(2.5rem, 8vw, 7rem);
-            line-height: 0.9;
-            text-transform: uppercase;
-            color: white;
-        }
-
-        .text-amber { color: var(--mex-amber); }
         .text-outline {
             -webkit-text-stroke: 1.5px var(--mex-amber);
             color: transparent;
         }
 
-        /* TARJETAS DE SERVICIOS */
+        /* Tarjetas de Servicio */
         .service-card {
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            background: #fff;
-            border-left: 0px solid var(--mex-amber);
+            border: 1px solid #f1f1f1;
         }
         .service-card:hover {
             transform: translateY(-10px);
-            border-left-width: 8px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
+            border-color: var(--mex-amber);
+            box-shadow: 0 20px 40px -10px rgba(0,0,0,0.1);
         }
 
-        /* BLUEPRINTS MAQUINARIA */
+        /* Blueprints de Maquinaria */
         .blueprint-card {
-            background: #0d0d0d;
-            border: 1px solid #222;
-            transition: 0.3s;
+            background: #0a0a0a;
+            border: 1px solid #1a1a1a;
+            transition: 0.3s ease;
         }
         .blueprint-card:hover {
             border-color: var(--mex-amber);
-            transform: scale(1.03);
+            background: #000;
         }
-        .blueprint-svg { filter: drop-shadow(0 0 5px rgba(241, 177, 54, 0.4)); }
 
-        /* SECCI”N EQUIPO */
-        .team-bg {
-            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.8)), 
+        /* Secci√≥n Equipo */
+        .team-banner {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.8)), 
                         url('https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80&w=1200');
             background-size: cover;
             background-position: center;
-            border-radius: 3rem;
-            min-height: 500px;
+            border-radius: 2rem;
+            overflow: hidden;
         }
 
-        /* QR AREA */
+        /* QR Area */
         .qr-gradient {
             background: linear-gradient(135deg, #111 0%, #000 100%);
-            border: 2px solid var(--mex-amber);
+            border: 3px solid var(--mex-amber);
         }
 
-        /* MOBILE FIXES */
+        /* Animaci√≥n suave para m√≥viles */
         @media (max-width: 768px) {
-            .hero-section { height: 80vh; }
-            .team-bg { border-radius: 1.5rem; min-height: 400px; }
-            .padding-mobile { padding: 2rem 1.5rem; }
+            .hero-section { min-height: 80vh; }
+            .hero-title { font-size: 3rem; }
+            .mobile-menu { display: none; }
+            .mobile-menu.active { display: block; }
         }
     </style>
 </head>
-<body class="bg-white text-zinc-900 selection:bg-amber-200">
+<body class="bg-white text-zinc-900 selection:bg-amber-100">
 
-    <!-- NAVEGACI”N -->
-    <nav class="fixed w-full z-[100] transition-all duration-300 header-glass">
+    <!-- NAVEGACI√ìN -->
+    <nav class="fixed w-full z-[100] glass-nav">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <div class="flex items-center gap-4">
-                <div class="bg-white px-4 py-1 rounded-lg font-black text-2xl text-black font-black-title italic">
+            <a href="#" class="flex items-center gap-3">
+                <div class="bg-white px-3 py-1 rounded font-black text-2xl text-black font-black-title italic">
                     <span class="text-amber-500">M</span>E<span class="text-amber-500">X</span>
                 </div>
                 <div class="hidden sm:block leading-none">
-                    <p class="text-white font-black text-xs tracking-tighter uppercase">Morales ExcavaciÛn</p>
-                    <p class="text-amber-500 text-[8px] font-bold uppercase tracking-[0.4em]">TarancÛn</p>
+                    <p class="text-white font-black text-xs tracking-tighter uppercase">Morales Excavaci√≥n S.L.</p>
+                    <p class="text-amber-500 text-[8px] font-bold uppercase tracking-[0.4em]">Taranc√≥n</p>
                 </div>
-            </div>
+            </a>
+            
             <div class="hidden lg:flex items-center gap-10 text-white/80 text-[10px] font-black uppercase tracking-widest">
                 <a href="#servicios" class="hover:text-amber-500 transition-colors">Servicios</a>
-                <a href="#maquinaria" class="hover:text-amber-500 transition-colors">Nuestra Flota</a>
-                <a href="#equipo" class="hover:text-amber-500 transition-colors">Equipo</a>
-                <a href="#contacto" class="bg-amber-500 text-black px-6 py-3 rounded-lg hover:bg-white transition-all">Presupuesto</a>
+                <a href="#maquinaria" class="hover:text-amber-500 transition-colors">Flota T√©cnica</a>
+                <a href="#equipo" class="hover:text-amber-500 transition-colors">Equipo Humano</a>
+                <a href="#contacto" class="bg-amber-500 text-black px-6 py-2.5 rounded hover:bg-white transition-all">Presupuesto</a>
             </div>
-            <button class="lg:hidden text-amber-500 text-2xl"><i class="fa-solid fa-bars-staggered"></i></button>
+
+            <!-- Burger Button -->
+            <button onclick="toggleMenu()" class="lg:hidden text-amber-500 text-2xl">
+                <i class="fa-solid fa-bars-staggered"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-black border-t border-white/10 px-6 py-8 space-y-6 text-white text-xs font-black uppercase tracking-widest">
+            <a href="#servicios" onclick="toggleMenu()" class="block hover:text-amber-500">Servicios</a>
+            <a href="#maquinaria" onclick="toggleMenu()" class="block hover:text-amber-500">Flota</a>
+            <a href="#equipo" onclick="toggleMenu()" class="block hover:text-amber-500">Equipo</a>
+            <a href="#contacto" onclick="toggleMenu()" class="block text-amber-500 italic">Solicitar Presupuesto</a>
         </div>
     </nav>
 
     <!-- HERO SECTION -->
-    <section class="hero-section">
-        <div class="max-w-7xl mx-auto px-6 w-full">
+    <section class="hero-section px-6">
+        <div class="max-w-7xl mx-auto w-full relative z-10">
             <div class="max-w-4xl space-y-6">
-                <p class="text-amber-500 font-black uppercase tracking-[0.6em] text-xs md:text-sm animate-pulse">
-                    <i class="fa-solid fa-location-dot mr-2"></i> TarancÛn y Alrededores
+                <p class="text-amber-500 font-black uppercase tracking-[0.6em] text-xs md:text-sm italic animate-pulse">
+                    <i class="fa-solid fa-location-crosshairs mr-2"></i> Taranc√≥n y Alrededores
                 </p>
-                <h1 class="hero-title font-black-title italic">
+                <h1 class="hero-title text-5xl md:text-[8rem] font-black-title italic leading-none text-white">
                     TRANSFORMAMOS <br>
                     <span class="text-outline">TERRENOS</span>,<br>
-                    CONSTRUIMOS <span class="text-amber">FUTURO.</span>
+                    CONSTRUIMOS <span class="text-amber-500">FUTURO.</span>
                 </h1>
                 <div class="flex flex-col sm:flex-row gap-6 pt-10">
-                    <a href="#servicios" class="bg-amber-500 text-black font-black px-12 py-6 rounded-xl uppercase text-xs tracking-widest hover:scale-110 transition-all shadow-2xl">
-                        Ver Nuestros Servicios
+                    <a href="#servicios" class="bg-amber-500 text-black font-black px-12 py-5 rounded uppercase text-xs tracking-widest hover:scale-110 transition-all shadow-2xl">
+                        Nuestras Soluciones
                     </a>
-                    <div class="flex items-center gap-4 text-white/60 border-l-2 border-amber-500 pl-6">
-                        <span class="text-xs font-bold uppercase tracking-widest">GarantÌa de <br> Eficiencia Real</span>
+                    <div class="flex items-center gap-4 text-white/50 border-l-2 border-amber-500 pl-6">
+                        <span class="text-[10px] font-bold uppercase tracking-widest leading-relaxed">Referente Local en <br> Movimiento de Tierras</span>
                     </div>
                 </div>
             </div>
@@ -143,64 +149,57 @@
     <!-- SERVICIOS -->
     <section id="servicios" class="py-24 md:py-32 bg-zinc-50 px-6">
         <div class="max-w-7xl mx-auto">
-            <div class="flex flex-col lg:flex-row justify-between items-end mb-24 gap-12">
+            <div class="flex flex-col lg:flex-row justify-between items-end mb-20 gap-10">
                 <div class="max-w-2xl">
-                    <h2 class="text-amber-500 font-black text-xs uppercase tracking-[0.6em] mb-4">Especialidades</h2>
-                    <h3 class="text-4xl md:text-7xl font-black text-black uppercase tracking-tighter leading-none italic">SERVICIOS <br> INTEGRALES</h3>
+                    <h2 class="text-amber-500 font-black text-xs uppercase tracking-[0.6em] mb-4">Ingenier√≠a y Obra</h2>
+                    <h3 class="text-4xl md:text-7xl font-black text-black uppercase tracking-tighter leading-none italic">DOMINIO TOTAL</h3>
                 </div>
-                <p class="text-zinc-500 text-sm font-medium border-l-4 border-amber-500 pl-8 max-w-sm italic">
-                    Soluciones de ingenierÌa civil y movimientos de tierra con cobertura total en la comarca de TarancÛn.
+                <p class="text-zinc-500 text-sm font-medium border-l-4 border-amber-500 pl-8 max-w-sm italic leading-relaxed">
+                    Operamos con maquinaria propia y personal t√©cnico especializado en Taranc√≥n.
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Servicio 1 -->
-                <div class="service-card p-10 rounded-[2.5rem] shadow-xl border border-zinc-100 flex flex-col h-full">
-                    <div class="text-amber-500 text-4xl mb-8"><i class="fa-solid fa-mound"></i></div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+                <!-- Servicio Items -->
+                <div class="service-card bg-white p-10 rounded-[2.5rem] flex flex-col h-full group">
+                    <div class="text-amber-500 text-4xl mb-8 group-hover:scale-110 transition-transform"><i class="fa-solid fa-mound"></i></div>
                     <h4 class="font-black text-xl mb-4 uppercase italic">Movimiento de Tierras</h4>
-                    <p class="text-zinc-500 text-sm leading-relaxed mb-6">Explanaciones, desmontes y terraplenado con precisiÛn digital.</p>
+                    <p class="text-zinc-500 text-sm leading-relaxed flex-grow">Desmontes, nivelaciones y terraplenado con precisi√≥n milim√©trica.</p>
                 </div>
-                <!-- Servicio 2 -->
-                <div class="service-card p-10 rounded-[2.5rem] shadow-xl border border-zinc-100 flex flex-col h-full">
-                    <div class="text-amber-500 text-4xl mb-8"><i class="fa-solid fa-burst"></i></div>
-                    <h4 class="font-black text-xl mb-4 uppercase italic">Derribos tÈcnicos</h4>
-                    <p class="text-zinc-500 text-sm leading-relaxed mb-6">DemoliciÛn mec·nica controlada y limpieza integral de tajos.</p>
+                <div class="service-card bg-white p-10 rounded-[2.5rem] flex flex-col h-full group">
+                    <div class="text-amber-500 text-4xl mb-8 group-hover:scale-110 transition-transform"><i class="fa-solid fa-burst"></i></div>
+                    <h4 class="font-black text-xl mb-4 uppercase italic">Derribos</h4>
+                    <p class="text-zinc-500 text-sm leading-relaxed flex-grow">Demolici√≥n t√©cnica segura de estructuras con limpieza integral del √°rea.</p>
                 </div>
-                <!-- Servicio 3 -->
-                <div class="service-card p-10 rounded-[2.5rem] shadow-xl border border-zinc-100 flex flex-col h-full">
-                    <div class="text-amber-500 text-4xl mb-8"><i class="fa-solid fa-trowel-bricks"></i></div>
-                    <h4 class="font-black text-xl mb-4 uppercase italic">CimentaciÛn</h4>
-                    <p class="text-zinc-500 text-sm leading-relaxed mb-6">Zanjeos, pozos y vaciados crÌticos para estructuras sÛlidas.</p>
+                <div class="service-card bg-white p-10 rounded-[2.5rem] flex flex-col h-full group">
+                    <div class="text-amber-500 text-4xl mb-8 group-hover:scale-110 transition-transform"><i class="fa-solid fa-trowel-bricks"></i></div>
+                    <h4 class="font-black text-xl mb-4 uppercase italic">Cimentaciones</h4>
+                    <p class="text-zinc-500 text-sm leading-relaxed flex-grow">Vaciados cr√≠ticos, zanjas y pozos para bases de edificaci√≥n s√≥lida.</p>
                 </div>
-                <!-- Servicio 4 -->
-                <div class="service-card p-10 rounded-[2.5rem] shadow-xl border border-zinc-100 flex flex-col h-full">
-                    <div class="text-amber-500 text-4xl mb-8"><i class="fa-solid fa-road"></i></div>
-                    <h4 class="font-black text-xl mb-4 uppercase italic">Viales y VÌas</h4>
-                    <p class="text-zinc-500 text-sm leading-relaxed mb-6">ConstrucciÛn de caminos, urbanizaciÛn y pavimentos tÈcnicos.</p>
+                <div class="service-card bg-white p-10 rounded-[2.5rem] flex flex-col h-full group">
+                    <div class="text-amber-500 text-4xl mb-8 group-hover:scale-110 transition-transform"><i class="fa-solid fa-road"></i></div>
+                    <h4 class="font-black text-xl mb-4 uppercase italic">Viales y Accesos</h4>
+                    <p class="text-zinc-500 text-sm leading-relaxed flex-grow">Construcci√≥n de caminos, firmes y urbanizaciones t√©cnicas.</p>
                 </div>
-            </div>
-
-            <!-- Servicios Secundarios -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-8">
-                <div class="service-card p-10 rounded-[2.5rem] shadow-xl border border-zinc-100 flex flex-col h-full">
-                    <div class="text-amber-500 text-4xl mb-8"><i class="fa-solid fa-truck-ramp-box"></i></div>
+                <div class="service-card bg-white p-10 rounded-[2.5rem] flex flex-col h-full group">
+                    <div class="text-amber-500 text-4xl mb-8 group-hover:scale-110 transition-transform"><i class="fa-solid fa-truck-ramp-box"></i></div>
                     <h4 class="font-black text-xl mb-4 uppercase italic">Escombros</h4>
-                    <p class="text-zinc-500 text-sm leading-relaxed mb-6">GestiÛn logÌstica de retirada y transporte a vertederos.</p>
+                    <p class="text-zinc-500 text-sm leading-relaxed flex-grow">Transporte log√≠stico y retirada de materiales sobrantes de obra.</p>
                 </div>
-                <div class="service-card p-10 rounded-[2.5rem] shadow-xl border border-zinc-100 flex flex-col h-full">
-                    <div class="text-amber-500 text-4xl mb-8"><i class="fa-solid fa-file-contract"></i></div>
+                <div class="service-card bg-white p-10 rounded-[2.5rem] flex flex-col h-full group">
+                    <div class="text-amber-500 text-4xl mb-8 group-hover:scale-110 transition-transform"><i class="fa-solid fa-microchip"></i></div>
                     <h4 class="font-black text-xl mb-4 uppercase italic">Estudio IA</h4>
-                    <p class="text-zinc-500 text-sm leading-relaxed mb-6">OptimizaciÛn volumÈtrica y estudio tÈcnico del proyecto.</p>
+                    <p class="text-zinc-500 text-sm leading-relaxed flex-grow">An√°lisis volum√©trico digital previo para ahorro de costes del cliente.</p>
                 </div>
-                <div class="service-card p-10 rounded-[2.5rem] shadow-xl border border-zinc-100 flex flex-col h-full">
-                    <div class="text-amber-500 text-4xl mb-8"><i class="fa-solid fa-recycle"></i></div>
-                    <h4 class="font-black text-xl mb-4 uppercase italic">Residuos RCD</h4>
-                    <p class="text-zinc-500 text-sm leading-relaxed mb-6">Tratamiento de residuos bajo normativa medioambiental.</p>
+                <div class="service-card bg-white p-10 rounded-[2.5rem] flex flex-col h-full group">
+                    <div class="text-amber-500 text-4xl mb-8 group-hover:scale-110 transition-transform"><i class="fa-solid fa-recycle"></i></div>
+                    <h4 class="font-black text-xl mb-4 uppercase italic">Gesti√≥n Residuos</h4>
+                    <p class="text-zinc-500 text-sm leading-relaxed flex-grow">Tramitaci√≥n de certificados y gesti√≥n en vertederos autorizados.</p>
                 </div>
-                <div class="service-card p-10 rounded-[2.5rem] shadow-xl border border-zinc-100 flex flex-col h-full">
-                    <div class="text-amber-500 text-4xl mb-8"><i class="fa-solid fa-file-shield"></i></div>
+                <div class="service-card bg-white p-10 rounded-[2.5rem] flex flex-col h-full group">
+                    <div class="text-amber-500 text-4xl mb-8 group-hover:scale-110 transition-transform"><i class="fa-solid fa-file-shield"></i></div>
                     <h4 class="font-black text-xl mb-4 uppercase italic">Permisos</h4>
-                    <p class="text-zinc-500 text-sm leading-relaxed mb-6">GestiÛn administrativa y tramitaciÛn de licencias tÈcnicas.</p>
+                    <p class="text-zinc-500 text-sm leading-relaxed flex-grow">Gesti√≥n administrativa y tramitaci√≥n de licencias municipales.</p>
                 </div>
             </div>
         </div>
@@ -209,74 +208,75 @@
     <!-- EQUIPO HUMANO -->
     <section id="equipo" class="py-24 px-6 bg-white">
         <div class="max-w-7xl mx-auto">
-            <div class="team-bg flex items-end p-8 md:p-24 shadow-2xl relative overflow-hidden group">
-                <div class="relative z-10 max-w-3xl text-white">
-                    <h2 class="text-amber-500 font-black uppercase text-xs tracking-widest mb-4 italic">El Factor Humano</h2>
-                    <h4 class="text-4xl md:text-8xl font-black uppercase tracking-tighter italic leading-none">EQUIPO FELIZ <br>Y EFICAZ</h4>
-                    <p class="mt-8 text-white/70 text-lg md:text-xl font-light italic">
-                        Contamos con operarios altamente cualificados, trabajando con la indumentaria de seguridad adecuada y un enfoque centrado en la resoluciÛn tÈcnica diaria.
+            <div class="team-banner p-8 md:p-24 flex flex-col justify-end min-h-[600px] shadow-2xl border-4 border-amber-500/20">
+                <div class="max-w-2xl text-white">
+                    <h2 class="text-amber-500 font-black uppercase text-xs tracking-widest mb-4 italic">El Factor Diferencial</h2>
+                    <h3 class="text-4xl md:text-7xl font-black uppercase tracking-tighter leading-none italic mb-8">EQUIPO FELIZ <br>Y EFICAZ</h3>
+                    <p class="text-white/80 text-lg md:text-xl font-light italic leading-relaxed">
+                        Nuestros profesionales trabajan bajo los m√°s altos est√°ndares de seguridad y eficacia. Personal cualificado, con la indumentaria adecuada y una sonrisa que demuestra su compromiso con Morales Excavaci√≥n S.L.
                     </p>
                     <div class="flex flex-wrap gap-4 mt-10">
-                        <span class="bg-amber-500 text-black px-6 py-2 rounded-full font-black text-[10px] uppercase">Seguridad 100%</span>
-                        <span class="bg-white/10 backdrop-blur-md text-white px-6 py-2 rounded-full font-black text-[10px] uppercase">Compromiso</span>
-                        <span class="bg-white/10 backdrop-blur-md text-white px-6 py-2 rounded-full font-black text-[10px] uppercase">Eficacia</span>
+                        <span class="bg-amber-500 text-black px-6 py-2 rounded font-black text-[10px] uppercase">Seguridad 100%</span>
+                        <span class="bg-white/10 backdrop-blur-md text-white px-6 py-2 rounded font-black text-[10px] uppercase border border-white/20">Eficacia Real</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FLOTA (DIBUJOS T…CNICOS) -->
-    <section id="maquinaria" class="py-24 md:py-32 bg-zinc-950 text-white px-6">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-24">
-                <h2 class="text-amber-500 text-xs font-black uppercase tracking-[0.6em] mb-4">Parque MÛvil</h2>
-                <h3 class="text-4xl md:text-8xl font-black tracking-tighter uppercase italic leading-none">NUESTRA FLOTA</h3>
-                <p class="text-zinc-500 mt-8 max-w-2xl mx-auto text-sm">10 unidades de ingenierÌa pesada listas para desplegarse en cualquier tajo.</p>
+    <!-- FLOTA (DIBUJOS T√âCNICOS) -->
+    <section id="maquinaria" class="py-24 md:py-32 bg-black text-white px-6">
+        <div class="max-w-7xl mx-auto text-center">
+            <div class="mb-24 space-y-4">
+                <h2 class="text-amber-500 text-xs font-black uppercase tracking-[0.6em] italic">Engineering Fleet</h2>
+                <h3 class="text-5xl md:text-8xl font-black tracking-tighter uppercase italic leading-none">NUESTRA FLOTA</h3>
+                <p class="text-zinc-500 text-sm max-w-xl mx-auto italic">10 Unidades de ingenier√≠a avanzada listas para el despliegue inmediato.</p>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6" id="fleet-container">
-                <!-- Inyectado por JS para dibujos tÈcnicos precisos -->
+                <!-- Dibujos Inyectados por JS -->
             </div>
         </div>
     </section>
 
     <!-- QR Y CONTACTO -->
-    <section id="contacto" class="py-24 md:py-40 px-6 bg-white overflow-hidden">
+    <section id="contacto" class="py-24 md:py-40 px-6 bg-white overflow-hidden relative">
         <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-20">
             <div class="lg:w-1/2 space-y-12 text-center lg:text-left">
-                <h3 class="text-5xl md:text-9xl font-black text-black tracking-tighter uppercase italic leading-none">MEX EN SU <br> <span class="text-amber-500 underline decoration-black/10">BOLSILLO</span></h3>
-                <p class="text-zinc-400 text-lg md:text-xl font-light italic">Escanee el cÛdigo QR para guardar nuestro contacto directo o descargar la web en su pantalla de inicio.</p>
-                
-                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                    <div class="bg-zinc-900 p-8 rounded-3xl text-white flex items-center gap-6 shadow-2xl transform hover:scale-105 transition-all">
+                <h3 class="text-6xl md:text-[9rem] font-black text-black tracking-tighter uppercase leading-none italic">MEX EN <br> SU <span class="text-amber-500 underline">BOLSILLO</span></h3>
+                <p class="text-zinc-400 text-xl font-light italic leading-relaxed">Escanee el c√≥digo QR para guardar nuestro contacto directo o descargar esta web en su m√≥vil. Servicio inmediato en Taranc√≥n.</p>
+                <div class="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start">
+                    <div class="bg-zinc-900 p-8 rounded-2xl text-white flex items-center gap-6 shadow-2xl transform hover:scale-105 transition-all cursor-pointer">
                         <i class="fa-solid fa-phone-volume text-amber-500 text-4xl"></i>
                         <div class="text-left">
-                            <p class="text-[9px] font-black uppercase text-zinc-500 tracking-widest italic">Contacto Urgente</p>
+                            <p class="text-[9px] font-black uppercase text-zinc-500 tracking-widest italic">Contacto Directo</p>
                             <p class="text-xl font-black italic tracking-tighter">+34 600 000 000</p>
                         </div>
                     </div>
                 </div>
             </div>
 
+            <!-- QR INTERACTIVO -->
             <div class="lg:w-1/3 text-center">
-                <div class="qr-gradient p-12 rounded-[4rem] shadow-2xl shadow-amber-500/20 inline-block transform hover:rotate-3 transition-transform">
-                    <!-- QR MEX DESIGN -->
-                    <svg width="220" height="220" viewBox="0 0 100 100">
-                        <rect x="5" y="5" width="25" height="25" fill="#f1b136" rx="2"/>
-                        <rect x="9" y="9" width="17" height="17" fill="black"/>
-                        <rect x="12" y="12" width="11" height="11" fill="#f1b136"/>
-                        
-                        <rect x="70" y="5" width="25" height="25" fill="#f1b136" rx="2"/>
-                        <rect x="74" y="9" width="17" height="17" fill="black"/>
-                        
-                        <rect x="5" y="70" width="25" height="25" fill="#f1b136" rx="2"/>
-                        <rect x="12" y="77" width="11" height="11" fill="#f1b136"/>
-                        
-                        <path d="M40 10h10v10h-10zM60 40h20v5h-20zM40 70h10v10h-10zM80 80h10v10h-10z" fill="white" opacity="0.6"/>
-                        <rect x="45" y="45" width="10" height="10" fill="#f1b136"/>
-                    </svg>
-                    <p class="text-white text-center font-black uppercase text-[10px] mt-8 tracking-[0.5em] italic">Scan MEX TarancÛn</p>
+                <div class="qr-gradient p-12 rounded-[3.5rem] shadow-2xl shadow-amber-500/20 inline-block transform hover:rotate-2 transition-transform">
+                    <div class="bg-white p-6 rounded-2xl">
+                        <!-- QR SIMULADO -->
+                        <svg width="200" height="200" viewBox="0 0 100 100">
+                            <rect x="5" y="5" width="25" height="25" fill="#000" rx="2"/>
+                            <rect x="10" y="10" width="15" height="15" fill="#fff"/>
+                            <rect x="12" y="12" width="11" height="11" fill="#f1b136"/>
+                            
+                            <rect x="70" y="5" width="25" height="25" fill="#000" rx="2"/>
+                            <rect x="75" y="10" width="15" height="15" fill="#fff"/>
+                            
+                            <rect x="5" y="70" width="25" height="25" fill="#000" rx="2"/>
+                            <rect x="12" y="77" width="11" height="11" fill="#f1b136"/>
+                            
+                            <path d="M40 10h10v10h-10zM60 40h20v5h-20zM40 70h10v10h-10zM80 80h10v10h-10z" fill="black" opacity="0.8"/>
+                            <rect x="45" y="45" width="10" height="10" fill="#f1b136"/>
+                        </svg>
+                    </div>
+                    <p class="text-white text-center font-black uppercase text-[10px] mt-8 tracking-[0.5em] italic">Morales Excavaci√≥n Digital</p>
                 </div>
             </div>
         </div>
@@ -287,44 +287,51 @@
         <div class="bg-white px-4 py-1.5 rounded inline-block font-black text-2xl text-black italic mb-10">
             <span class="text-amber-500">M</span>E<span class="text-amber-500">X</span>
         </div>
-        <p class="text-white/30 text-[10px] font-black uppercase tracking-[0.5em]">Morales ExcavaciÛn S.L. &copy; 2026 | TarancÛn - Cuenca</p>
+        <p class="text-white/30 text-[10px] font-black uppercase tracking-[0.5em]">Morales Excavaci√≥n S.L. &copy; 2026 | Taranc√≥n - Cuenca - Espa√±a</p>
     </footer>
 
     <script>
-        const fleet = [
-            { n: "CAT 320", d: "Retroexcavadora Orugas", type: "retro" },
-            { n: "JCB 3CX", d: "Mixta Retrocargadora", type: "mixta" },
-            { n: "HAMM 3412", d: "Apisonadora Rodillo", type: "apisonadora" },
-            { n: "SCANIA G450", d: "CamiÛn Gr˙a / Pluma", type: "camion" },
-            { n: "VOLVO A30G", d: "D˙mper Articulado", type: "camion" },
-            { n: "CAT D6", d: "Bulldozer NivelaciÛn", type: "retro" },
-            { n: "KUBOTA KX", d: "Miniexcavadora 5T", type: "retro" },
-            { n: "MERCEDES", d: "BaÒera de 3 Ejes", type: "camion" },
-            { n: "CAT 140", d: "Motoniveladora", type: "mixta" },
-            { n: "MAN TGS", d: "Cisterna de Agua", type: "camion" }
+        // Data de la Flota
+        const machines = [
+            { n: "CAT 320", d: "Retroexcavadora Orugas", t: "retro" },
+            { n: "JCB 3CX", d: "Mixta Retrocargadora", t: "mixta" },
+            { n: "HAMM 3412", d: "Apisonadora Rodillo", t: "apisonadora" },
+            { n: "SCANIA G450", d: "Cami√≥n Gr√∫a / Pluma", t: "camion" },
+            { n: "VOLVO A30G", d: "D√∫mper Articulado", t: "camion" },
+            { n: "CAT D6", d: "Bulldozer Nivelaci√≥n", t: "retro" },
+            { n: "KUBOTA KX", d: "Miniexcavadora 5T", t: "retro" },
+            { n: "MERCEDES", d: "Ba√±era de 3 Ejes", t: "camion" },
+            { n: "CAT 140", d: "Motoniveladora", t: "mixta" },
+            { n: "MAN TGS", d: "Cisterna de Agua", t: "camion" }
         ];
 
-        const drawings = {
-            retro: `<path d="M5 50h40l5-15h-35l-10 15zM45 35l10-20h20l15 15M85 30l10 25M10 50a8 8 0 100 16 8 8 0 000-16zM35 50a8 8 0 100 16 8 8 0 000-16zM45 35h25M85 30h10v10h-10z" stroke-width="1.5"/>`,
-            mixta: `<path d="M20 50h50l5-25h-45M10 25h30l5 15M70 50l15-25M5 25l15 25M25 50a8 8 0 100 16 8 8 0 000-16zM60 50a8 8 0 100 16 8 8 0 000-16z" stroke-width="1.5"/>`,
-            apisonadora: `<path d="M5 50a18 18 0 1036 0 18 18 0 00-36 0zM41 50h45l5-25h-40M80 50a8 8 0 100 16 8 8 0 000-16zM45 25h35v12h-35z" stroke-width="1.5"/>`,
-            camion: `<path d="M5 50h90v-20h-55v-12h-35v42zM15 50a8 8 0 100 16 8 8 0 000-16zM75 50a8 8 0 100 16 8 8 0 000-16zM35 25h50v8h-50z" stroke-width="1.5"/>`
+        // Blueprints detallados
+        const svgs = {
+            retro: `<path d="M5 50h40l5-15h-35l-10 15zM45 35l10-20h20l15 15M85 30l10 25M10 50a8 8 0 100 16 8 8 0 000-16zM35 50a8 8 0 100 16 8 8 0 000-16z" stroke-width="1.8"/>`,
+            mixta: `<path d="M20 50h50l5-25h-45M10 25h30l5 15M70 50l15-25M5 25l15 25M25 50a8 8 0 100 16 8 8 0 000-16zM60 50a8 8 0 100 16 8 8 0 000-16z" stroke-width="1.8"/>`,
+            apisonadora: `<path d="M5 50a18 18 0 1036 0 18 18 0 00-36 0zM41 50h45l5-25h-40M80 50a8 8 0 100 16 8 8 0 000-16zM45 25h35v12h-35z" stroke-width="1.8"/>`,
+            camion: `<path d="M5 50h90v-30h-55v-12h-35v42zM15 50a8 8 0 100 16 8 8 0 000-16zM75 50a8 8 0 100 16 8 8 0 000-16z" stroke-width="1.8"/>`
         };
 
-        const container = document.getElementById('fleet-container');
-        fleet.forEach(m => {
-            container.innerHTML += `
-                <div class="blueprint-card p-10 rounded-[3rem] text-center transition-all group cursor-pointer hover:shadow-2xl shadow-amber-500/10">
-                    <div class="h-32 flex items-center justify-center mb-8">
-                        <svg viewBox="0 0 100 75" fill="none" stroke="#f1b136" stroke-dasharray="3,2" class="blueprint-svg w-32 h-32 opacity-80 group-hover:opacity-100 transition-opacity">
-                            ${drawings[m.type] || drawings.retro}
+        const grid = document.getElementById('fleet-container');
+        machines.forEach(m => {
+            grid.innerHTML += `
+                <div class="blueprint-card p-8 rounded-[2.5rem] text-center group cursor-pointer">
+                    <div class="h-28 flex items-center justify-center mb-6">
+                        <svg viewBox="0 0 100 75" fill="none" stroke="#f1b136" class="w-28 h-28 opacity-80 group-hover:opacity-100 transition-opacity">
+                            ${svgs[m.t] || svgs.retro}
                         </svg>
                     </div>
-                    <h4 class="text-white font-black text-xl italic tracking-tighter uppercase mb-2 group-hover:text-amber-500">${m.n}</h4>
-                    <p class="text-amber-500 font-black text-[9px] uppercase tracking-widest opacity-60 italic">${m.d}</p>
+                    <h4 class="text-white font-black text-lg italic tracking-tighter uppercase mb-1">${m.n}</h4>
+                    <p class="text-amber-500 font-black text-[8px] uppercase tracking-widest opacity-60">${m.d}</p>
                 </div>
             `;
         });
+
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
     </script>
 </body>
 </html>
